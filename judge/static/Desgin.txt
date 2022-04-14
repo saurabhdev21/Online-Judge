@@ -1,0 +1,43 @@
+Final Pages:
+
+Front End
+1. Login page. (/login)
+2. Dashboard page (/{username})
+3. list of all questions (/problems)
+4. Description of the problem (/{pid})
+5. Submission page (/{pid}/submit)
+6. verdict page (/verdict)
+
+
+LLD.
+1. Login page will be the first page for the user.
+2. will inherit base page and it will contain side bar with problems labeled as easy, medium, hard.
+3. list of all problems will inherit the base page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Real development steps:
+
+1. Create a virutal environment 							 'python3 -m venv env'
+2. activating virtual environment 							 'source env/bin/activate'
+3. Installing django 										 'pip install django'
+4. Creating a project 										 'django-admin startproject judge'
+5. make migrations 											 'python manage.py makemigrations'
+6. migrate													 'python manage.py migrate'
+7. create an app
+8. make static and templates folder.
+9. initialising the git repo.
+10. start coding.
