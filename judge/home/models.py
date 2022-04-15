@@ -1,31 +1,36 @@
+import datetime
 from pickle import TRUE
 from django.db import models
+
+from judge.settings import BASE_DIR, PROBLEMS, PROBLEMS_INPUT, PROBLEMS_OUTPUT, STATIC_URL
 
 # Create your models here.
 # makemigrations - create changes and store in file
 # migrate - apply the pending changes created by makemigrations
 
-class Problem(models.Model):
-    pid = models.BigIntegerField(primary_key=TRUE)
+
+class Problems(models.Model):
+    pid = models.IntegerField(primary_key=TRUE)
     p_name = models.CharField(max_length= 200)
-    p_link = models.CharField(max_length= 200)
-    p_input = models.CharField(max_length= 200)
-    p_output = models.CharField(max_length= 200)
+    p_link = models.FilePathField(path = BASE_DIR/STATIC_URL/PROBLEMS)
+    p_input = models.FilePathField(path = BASE_DIR/STATIC_URL/PROBLEMS_INPUT)
+    p_output = models.FilePathField(path = BASE_DIR/STATIC_URL/PROBLEMS_OUTPUT)
     p_submitted = models.CharField(max_length= 200)
     p_accepted = models.IntegerField()
     p_level = models.CharField(max_length= 10)
     p_editorial = models.CharField(max_length= 100)
-    p_last_login = models.DateField()
+    # p_last_login = models.DateField(null=TRUE, blank=TRUE, default= datetime.date.today())
 
     def __str__(self):
         return self.pid
 
+
 class User_attempt(models.Model):
-    sid = models.BigIntegerField()
-    attempt_id = models.BigIntegerField()
-    attempt_pid = models.BigIntegerField()
-    attempt_username = models.BigIntegerField()
-    attempt_datetime = models.DateField() 
+    sid = models.IntegerField(default=1)
+    attempt_id = models.IntegerField(default=1)
+    attempt_pid = models.IntegerField(default=1)
+    attempt_username = models.IntegerField(default='')
+    # attempt_datetime = models.DateField(null=TRUE, blank=TRUE, default= datetime.date.today()) 
     attempt_verdict = models.BooleanField(default= False)
 
     def __str__(self):
