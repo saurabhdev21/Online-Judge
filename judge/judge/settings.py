@@ -120,7 +120,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 PROBLEMS = 'problems/'
 PROBLEMS_INPUT = 'problem_input/'
-PROBLEMS_OUTPUT = 'problem_ouput/'
+PROBLEMS_OUTPUT = 'problem_output/'
 
 
 # Default primary key field type

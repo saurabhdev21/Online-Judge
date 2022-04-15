@@ -22,7 +22,7 @@ class Problems(models.Model):
     # p_last_login = models.DateField(null=TRUE, blank=TRUE, default= datetime.date.today())
 
     def __str__(self):
-        return self.pid
+        return str(self.pid)
 
 
 class User_attempt(models.Model):
@@ -34,4 +34,4 @@ class User_attempt(models.Model):
     attempt_verdict = models.BooleanField(default= False)
 
     def __str__(self):
-        return self.attempt_username + self.attempt_id + self.attempt_pid
+        return str(self.attempt_username + self.attempt_id + self.attempt_pid)
