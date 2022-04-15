@@ -1,0 +1,27 @@
+problem table:
+p_id init
+p_name varchar(200)
+p_link varchar(300)
+p_input varchar(200)
+p_output varchar(200)
+p_submitted int 
+p_accepted int 
+p_level varchar(10) ('easy', 'medium', 'hard')
+p_editorial varchar(100)
+
+user table:
+user_name varchar(100) primary_key
+pid int primary_key 
+user_email varchar(100)
+user_password varchar(100)
+user_number varchar(100)
+user_questions_attempted(100)
+user_questions_successful(100)
+
+attempt table:
+attempt_id int
+attempt_pid int
+attempt_username int
+attempt_datetime date 
+attempt_verdict boolean
+
